@@ -1,9 +1,17 @@
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  text-shadow: 2px 2px 2px #ddd;
+}
+
 #memory_board {
-  background: lightblue;
-  border: #999 1px solid;
+
   width: 90%;
-  height: 700px;
-  padding: 20px;
+  height: auto;
+  padding: 10px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -11,16 +19,39 @@
   justify-content: space-between;
 }
 
-#memory_board > div{
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAATUlEQVQYlZ3QQQoAIAhE0X/BTtntvEDLaSOlpJuCIYKHpvB5BqCQ0SKteVLhi4ybAh8EpDtgh9bngYAkB8rV8x8tTRzfxUBvy35F1R43zcB6rPlo4VYAAAAASUVORK5CYII=) repeat;
+#memory_board > div.unflipped {
+  background-image: url('images/nba-logo.jpg');
+  background-size: contain;
   border: #000 1px solid;
-  width: 15%;
-  height: 15%;
-  margin: 15px;
-  padding:20px;
+  width: 25%;
+  height: 70px;
+  margin: 5px;
+  padding: 10px;
   font-size:64px;
   cursor: pointer;
   text-align: center;
-/*  flex: 1 0 auto;*/
-
+  box-shadow: 3px 3px 3px #ddd;
+  transition: box-shadow ease 0.2s;
+  border-radius: 5px;
 }
+
+#memory_board > div.flipped {
+  background-image: url('images/nba-logo.jpg');
+  background-size: contain;
+  border: #000 1px solid;
+  width: 25%;
+  height: 70px;
+  margin: 5px;
+  padding: 10px;
+  font-size:64px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 3px 3px 3px #ddd;
+  transition: box-shadow ease 0.2s;
+  border-radius: 5px;
+}
+
+#memory_board > div.unflipped:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
