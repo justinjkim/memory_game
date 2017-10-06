@@ -10,7 +10,11 @@ let images = [
   "images/kyrie.jpg",
   "images/kyrie.jpg",
   "images/robinson.jpg",
-  "images/timduncan.jpg"
+  "images/robinson.jpg",
+  "images/timduncan.jpg",
+  "images/timduncan.jpg",
+  "images/lebron.jpg",
+  "images/lebron.jpg"
 ];
 
 function shuffleDeck(deck) {
@@ -22,6 +26,11 @@ function shuffleDeck(deck) {
   }
 }
 
+function flipCard() {
+  this.classList.add("clicked");
+  this.classList.remove("unflipped");
+}
+
 function createBoard() {
   shuffleDeck(images);
   let board = document.getElementById("board");
@@ -31,7 +40,7 @@ function createBoard() {
     image.setAttribute("src", images[i]);
     card.setAttribute("class", "unflipped");
     card.appendChild(image);
-  //  card.addEventListener("click", flipCard);
+    card.addEventListener("click", flipCard);
     board.appendChild(card);
   }
 }
