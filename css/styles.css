@@ -1,0 +1,17 @@
+body {
+
+}
+
+#board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#board div {
+  flex-basis: 40%;
+  height: 100px;
+  background-color: lightblue;
+  border: 2px black #ddd;
+  margin: 20px;
+}
