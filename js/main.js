@@ -1,3 +1,5 @@
+let guessAttempts = [];
+let playerLives = 8;
 let images = [
   "images/curry.jpg",
   "images/curry.jpg",
@@ -16,6 +18,37 @@ let images = [
   "images/lebron.jpg",
   "images/lebron.jpg"
 ];
+let lives = [];
+for (let i = 0; i < 8; i++) {
+  lives.push("images/basketball.png");
+}
+console.log(lives);
+
+function createBoard() {
+  shuffleDeck(images);
+  let board = document.getElementById("board");
+  for (let i = 0; i < images.length; i++) {
+    let card = document.createElement("div");
+    let image = document.createElement("img");
+    image.setAttribute("src", images[i]);
+    card.setAttribute("class", "unflipped");
+    card.appendChild(image);
+    card.addEventListener("click", flipCard);
+    board.appendChild(card);
+  }
+}
+createBoard();
+
+function createLives() {
+  let livesLeft = document.getElementById("livesLeft");
+  for (let i = 0; i < lives.length; i++) {
+    let life = document.createElement("img");
+    life.setAttribute("src", lives[i]);
+    livesLeft.append(life);
+  }
+}
+createLives();
+
 
 function shuffleDeck(deck) {
   for (let i = 0; i < deck.length; i++) {
@@ -25,10 +58,6 @@ function shuffleDeck(deck) {
     deck[j] = temp;
   }
 }
-
-
-
-let guessAttempts = [];
 
 function flipCard() {
   if (guessAttempts.length === 0) {
@@ -59,34 +88,13 @@ function resetAttempts() {
       guessAttempts[i].classList.remove("clicked");
       guessAttempts[i].classList.add("unflipped");
     }
+    livesLeft.removeChild(document.getElementById("livesLeft").getElementsByTagName("img")[0]);
     // reset array
     guessAttempts = [];
+
+
+    if (playerLives === 0) {
+      // need to add logic to restart the game
+    }
   }
 }
-
-function createBoard() {
-  shuffleDeck(images);
-  let board = document.getElementById("board");
-  for (let i = 0; i < images.length; i++) {
-    let card = document.createElement("div");
-    let image = document.createElement("img");
-    image.setAttribute("src", images[i]);
-    card.setAttribute("class", "unflipped");
-    card.appendChild(image);
-    card.addEventListener("click", flipCard);
-    board.appendChild(card);
-  }
-}
-createBoard();
-
-// might not need this for now
-// function playGame() {
-//   let div_one = document.getElementById("one");
-//   let div_two = document.getElementById("two");
-//   let div_three = document.getElementById("three");
-//   let div_four = document.getElementById("four");
-//
-//   div_one.addEventListener("click", function() {
-//     this.classToggle('toggle');
-//   });
-// }
