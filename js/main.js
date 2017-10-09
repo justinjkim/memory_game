@@ -40,20 +40,26 @@ function flipCard() {
     this.classList.add("clicked");
     this.classList.remove("unflipped");
     guessAttempts.push(this);
-    setTimeout(resetAttempts, 300);
+    setTimeout(resetAttempts, 500);
   }
 }
 
 function resetAttempts() {
   if (guessAttempts[0].innerHTML === guessAttempts[1].innerHTML) {
     console.log("Nice, we found a match!");
-    console.log(guessAttempts);
+    guessAttempts[0].removeEventListener("click", flipCard);
+    guessAttempts[1].removeEventListener("click", flipCard);
+
+    // hmm, need to reset the array back to zero, even if successful....why??
+    guessAttempts = [];
+
   } else {
     console.log("Sorry, no match!");
     for (let i = 0; i < guessAttempts.length; i++) {
       guessAttempts[i].classList.remove("clicked");
       guessAttempts[i].classList.add("unflipped");
     }
+    // reset array
     guessAttempts = [];
   }
 }
