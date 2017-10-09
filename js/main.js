@@ -26,9 +26,36 @@ function shuffleDeck(deck) {
   }
 }
 
+
+
+let guessAttempts = [];
+
 function flipCard() {
-  this.classList.add("clicked");
-  this.classList.remove("unflipped");
+  if (guessAttempts.length === 0) {
+    this.classList.add("clicked");
+    this.classList.remove("unflipped");
+    guessAttempts.push(this);
+    console.log(guessAttempts);
+  } else if (guessAttempts.length === 1) {
+    this.classList.add("clicked");
+    this.classList.remove("unflipped");
+    guessAttempts.push(this);
+    setTimeout(resetAttempts, 300);
+  }
+}
+
+function resetAttempts() {
+  if (guessAttempts[0].innerHTML === guessAttempts[1].innerHTML) {
+    console.log("Nice, we found a match!");
+    console.log(guessAttempts);
+  } else {
+    console.log("Sorry, no match!");
+    for (let i = 0; i < guessAttempts.length; i++) {
+      guessAttempts[i].classList.remove("clicked");
+      guessAttempts[i].classList.add("unflipped");
+    }
+    guessAttempts = [];
+  }
 }
 
 function createBoard() {
