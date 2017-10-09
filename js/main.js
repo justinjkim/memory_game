@@ -20,7 +20,7 @@ let images = [
 ];
 let lives = [];
 for (let i = 0; i < 8; i++) {
-  lives.push("images/basketball.png");
+  lives.push("images/basketball.jpg");
 }
 console.log(lives);
 
