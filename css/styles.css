@@ -12,6 +12,12 @@ h1 {
   display: block;
   width: 85%;
   font-size: 1.2em;
+  height: auto;
+}
+
+#livesLeft img {
+  height: 50px;
+  width: auto;
 }
 
 .container {
