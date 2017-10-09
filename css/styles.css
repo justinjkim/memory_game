@@ -13,10 +13,17 @@ h1 {
   width: 85%;
   font-size: 1.2em;
   height: auto;
+  vertical-align: middle;
+}
+
+#livesLeft p {
+  display: inline;
+  vertical-align: center;
+  line-height: normal;
 }
 
 #livesLeft img {
-  height: 50px;
+  height: 70px;
   width: auto;
 }
 
