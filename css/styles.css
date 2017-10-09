@@ -39,4 +39,12 @@ h1 {
 
 .unflipped {
   box-shadow: 10px 10px 10px #ddd;
+  background: center;
+  background-image: url("../images/nba-logo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.unflipped img {
+  visibility: hidden;
 }
