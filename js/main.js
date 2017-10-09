@@ -44,17 +44,16 @@ function createBoard() {
     board.appendChild(card);
   }
 }
-
 createBoard();
 
-
-function playGame() {
-  let div_one = document.getElementById("one");
-  let div_two = document.getElementById("two");
-  let div_three = document.getElementById("three");
-  let div_four = document.getElementById("four");
-
-  div_one.addEventListener("click", function() {
-    this.classToggle('toggle');
-  });
-}
+// might not need this for now
+// function playGame() {
+//   let div_one = document.getElementById("one");
+//   let div_two = document.getElementById("two");
+//   let div_three = document.getElementById("three");
+//   let div_four = document.getElementById("four");
+//
+//   div_one.addEventListener("click", function() {
+//     this.classToggle('toggle');
+//   });
+// }
