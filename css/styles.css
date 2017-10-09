@@ -7,6 +7,13 @@ h1 {
   text-transform: uppercase;
 }
 
+#livesLeft {
+  margin: 0 auto;
+  display: block;
+  width: 85%;
+  font-size: 1.2em;
+}
+
 .container {
   margin: 0 auto;
   display: block;
@@ -22,7 +29,7 @@ h1 {
 #board div {
   flex-basis: 20%;
   height: 170px;
-  background-color: lightblue;
+  /*background-color: lightblue;*/
   border: 2px black #ddd;
   margin: 15px;
 }
