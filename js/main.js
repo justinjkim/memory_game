@@ -22,7 +22,8 @@ let lives = [];
 for (let i = 0; i < 8; i++) {
   lives.push("images/basketball.jpg");
 }
-console.log(lives);
+
+
 
 function createBoard() {
   shuffleDeck(images);
@@ -36,6 +37,7 @@ function createBoard() {
     card.addEventListener("click", flipCard);
     board.appendChild(card);
   }
+  tryAgain.style.visibility = "hidden";
 }
 createBoard();
 
@@ -61,12 +63,10 @@ function shuffleDeck(deck) {
 
 function flipCard() {
   if (guessAttempts.length === 0) {
-    this.classList.add("clicked");
     this.classList.remove("unflipped");
     guessAttempts.push(this);
     console.log(guessAttempts);
   } else if (guessAttempts.length === 1) {
-    this.classList.add("clicked");
     this.classList.remove("unflipped");
     guessAttempts.push(this);
     setTimeout(resetAttempts, 500);
@@ -81,20 +81,21 @@ function resetAttempts() {
 
     // hmm, need to reset the array back to zero, even if successful....why??
     guessAttempts = [];
-
-  } else {
-    console.log("Sorry, no match!");
+  }
+  else {
     for (let i = 0; i < guessAttempts.length; i++) {
-      guessAttempts[i].classList.remove("clicked");
       guessAttempts[i].classList.add("unflipped");
     }
     livesLeft.removeChild(document.getElementById("livesLeft").getElementsByTagName("img")[0]);
+    playerLives--;
     // reset array
     guessAttempts = [];
 
 
     if (playerLives === 0) {
       // need to add logic to restart the game
+      let tryAgain = document.getElementById("tryAgain");
+      tryAgain.style.visibility = "visible";
     }
   }
 }
