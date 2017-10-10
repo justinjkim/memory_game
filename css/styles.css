@@ -45,6 +45,7 @@ h1 {
   /*background-color: lightblue;*/
   border: 2px black #ddd;
   margin: 15px;
+  border-radius: 5px;
 }
 
 #board div img {
@@ -52,11 +53,8 @@ h1 {
   height: 100%;
   background-size: cover;
   overflow: hidden;
+  border-radius: 5px;
 }
-
-/*.clicked {
-  border: 5px yellow solid;
-}*/
 
 .unflipped {
   box-shadow: 10px 10px 10px #ddd;
@@ -68,4 +66,26 @@ h1 {
 
 .unflipped img {
   visibility: hidden;
+}
+
+#tryAgain {
+  text-align: center;
+  z-index: 50;
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  box-shadow: 3px 3px 3px #ddd;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: white;
+  border-radius: 5px;
+
+
+}
+
+#tryAgain a {
+  text-decoration: none;
 }
