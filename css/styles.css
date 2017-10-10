@@ -7,6 +7,12 @@ h1 {
   text-transform: uppercase;
 }
 
+p {
+  width: 85%;
+  display: block;
+  margin: 0 auto;
+}
+
 #livesLeft {
   margin: 0 auto;
   display: block;
@@ -14,12 +20,6 @@ h1 {
   font-size: 1.2em;
   height: auto;
   vertical-align: middle;
-}
-
-#livesLeft p {
-  display: inline;
-  vertical-align: center;
-  line-height: normal;
 }
 
 #livesLeft img {
@@ -44,7 +44,7 @@ h1 {
   height: 170px;
   /*background-color: lightblue;*/
   border: 2px black #ddd;
-  margin: 15px;
+  margin: 15px 15px 15px 0;
   border-radius: 5px;
 }
 
@@ -68,7 +68,7 @@ h1 {
   visibility: hidden;
 }
 
-#tryAgain {
+#tryAgain, #won {
   text-align: center;
   z-index: 50;
   width: 300px;
@@ -82,8 +82,6 @@ h1 {
   margin: auto;
   background-color: white;
   border-radius: 5px;
-
-
 }
 
 #tryAgain a {
