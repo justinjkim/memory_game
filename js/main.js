@@ -1,5 +1,6 @@
 let guessAttempts = [];
 let playerLives = 8;
+let score = 0;
 let images = [
   "images/curry.jpg",
   "images/curry.jpg",
@@ -22,6 +23,8 @@ let lives = [];
 for (let i = 0; i < 8; i++) {
   lives.push("images/basketball.jpg");
 }
+let tryAgain = document.getElementById("tryAgain");
+let won = document.getElementById("won");
 
 
 
@@ -38,6 +41,7 @@ function createBoard() {
     board.appendChild(card);
   }
   tryAgain.style.visibility = "hidden";
+  won.style.visibility = "hidden";
 }
 createBoard();
 
@@ -75,12 +79,14 @@ function flipCard() {
 
 function resetAttempts() {
   if (guessAttempts[0].innerHTML === guessAttempts[1].innerHTML) {
-    console.log("Nice, we found a match!");
     guessAttempts[0].removeEventListener("click", flipCard);
     guessAttempts[1].removeEventListener("click", flipCard);
-
+    score++;
     // hmm, need to reset the array back to zero, even if successful....why??
     guessAttempts = [];
+    if (score ===8) {
+      won.style.visibility = "visible";
+    }
   }
   else {
     for (let i = 0; i < guessAttempts.length; i++) {
@@ -93,8 +99,6 @@ function resetAttempts() {
 
 
     if (playerLives === 0) {
-      // need to add logic to restart the game
-      let tryAgain = document.getElementById("tryAgain");
       tryAgain.style.visibility = "visible";
     }
   }
